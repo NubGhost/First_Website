@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>rock paper scissors</title>
-    <style></style>
-  </head>
 
-  <body>
-    <p>hello</p>
-    <p>rock paper scissors</p>
+<head>
+  <title>rock paper scissors</title>
+  <style>
+    .roundButton {border-radius: 50%;}
+  </style>
+</head>
 
-    <button
-      onclick="
+<body>
+
+  <h1> rock paper scissors<br></h>
+
+
+
+    <button class="roundButton" onclick="
       playGame('rock');
-           ">
-      rock
+           "><img src="images/rock-emoji.png">
+
     </button>
-    <button
-      onclick="
+    <button class="roundButton" onclick="
        playGame('paper');
-        ">
-      paper
+        "><img src="images/paper-emoji.png">
+
     </button>
-    <button
-      onclick="
+    <button class="roundButton" onclick="
         playGame('scissors');
-        ">
-      scissors
+        "><img src="images/scissors-emoji.png">
+
     </button>
-    <button
-      onclick="
+    <button onclick="
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
       localStorage.removeItem('score');
+      updateScore();
+      resetScoreMassage();
     ">
       Reset Score
     </button>
+    <h2></h2>
+    <h3></h3>
 
     <script>
       let score = JSON.parse(localStorage.getItem('score')) || {
@@ -43,6 +48,13 @@
         losses: 0,
         ties: 0,
       };
+      updateScore();
+      function updateScore() {
+        document.querySelector('h2').innerHTML = `Wins ${score.wins} Losses ${score.losses}  Ties ${score.ties}`;
+      }
+      function resetScoreMassage() {
+        document.querySelector('h3').innerHTML = `Score Has Been Rest`;
+      }
 
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
@@ -83,10 +95,12 @@
         }
 
         localStorage.setItem('score', JSON.stringify(score));
+        updateScore();
+        document.querySelector('h3').innerHTML = `You picked ${playerMove} . computer picked ${computerMove}. ${result}`;
 
-        console.log(score);
-        alert(`You picked ${playerMove} . computer picked ${computerMove}. ${result}
-      Wins : ${score.wins} Losses : ${score.losses} Ties : ${score.ties}`);
+        // console.log(score);
+        // alert(`You picked ${playerMove} . computer picked ${computerMove}. ${result}
+        // Wins : ${score.wins} Losses : ${score.losses} Ties : ${score.ties}`);
       }
 
       function pickComputerMove() {
@@ -105,5 +119,6 @@
         return computerMove;
       }
     </script>
-  </body>
+</body>
+
 </html>
