@@ -4,13 +4,26 @@
 <head>
   <title>rock paper scissors</title>
   <style>
-    .roundButton {border-radius: 50%;}
+    .centerText{
+      text-align: center;
+    }
+    .textColor {
+      color: white;
+    }
+
+    .backGoundColor {
+      background-color: black;
+    }
+
+    .roundButton {
+      border-radius: 50%;
+    }
   </style>
 </head>
 
-<body>
+<body class="backGoundColor">
 
-  <h1> rock paper scissors<br></h>
+  <h1 class="textColor centerText"> rock paper scissors<br><br></h>
 
 
 
@@ -39,8 +52,9 @@
     ">
       Reset Score
     </button>
-    <h2></h2>
-    <h3></h3>
+    <br><br>
+    <h2 class="textColor centerText"></h2>
+    <h3 class="textColor centerText"></h3>
 
     <script>
       let score = JSON.parse(localStorage.getItem('score')) || {
@@ -98,9 +112,7 @@
         updateScore();
         document.querySelector('h3').innerHTML = `You picked ${playerMove} . computer picked ${computerMove}. ${result}`;
 
-        // console.log(score);
-        // alert(`You picked ${playerMove} . computer picked ${computerMove}. ${result}
-        // Wins : ${score.wins} Losses : ${score.losses} Ties : ${score.ties}`);
+
       }
 
       function pickComputerMove() {
