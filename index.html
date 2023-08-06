@@ -4,9 +4,10 @@
 <head>
   <title>rock paper scissors</title>
   <style>
-    .centerText{
+    .centerText {
       text-align: center;
     }
+
     .textColor {
       color: white;
     }
@@ -55,6 +56,7 @@
     <br><br>
     <h2 class="textColor centerText"></h2>
     <h3 class="textColor centerText"></h3>
+    <img src="" id='image' class="">
 
     <script>
       let score = JSON.parse(localStorage.getItem('score')) || {
@@ -63,8 +65,23 @@
         ties: 0,
       };
       updateScore();
+
+      function changeImage(computerMove) {
+        var img = document.getElementById('image');
+        if (computerMove === 'rock')
+          img.src = "images/rock-emoji.png";
+        else if (computerMove === 'scissors')
+          img.src = "images/scissors-emoji.png";
+        else if (computerMove === 'paper')
+          img.src = "images/paper-emoji.png";
+
+
+      }
+
       function updateScore() {
+
         document.querySelector('h2').innerHTML = `Wins ${score.wins} Losses ${score.losses}  Ties ${score.ties}`;
+
       }
       function resetScoreMassage() {
         document.querySelector('h3').innerHTML = `Score Has Been Rest`;
@@ -72,6 +89,8 @@
 
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
+
+        changeImage(computerMove);
 
         let result = '';
         if (playerMove === 'scissors') {
