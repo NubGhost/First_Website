@@ -1,0 +1,15 @@
+.centerText {
+    text-align: center;
+  }
+
+  .textColor {
+    color: white;
+  }
+
+  .backGoundColor {
+    background-color: black;
+  }
+
+  .roundButton {
+    border-radius: 50%;
+  }
