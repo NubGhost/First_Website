@@ -3,7 +3,7 @@ function updateScore() {
     document.querySelector('h2').innerHTML = `Wins ${score.wins} Losses ${score.losses}  Ties ${score.ties}`;
 
   }
-  function changeImage(computerMove) {
+  function changeImage(computerMove,playerMove) {
       var img = document.getElementById('image');
     if (computerMove === 'rock')
       img.src = "images/rock-emoji.png";
@@ -11,6 +11,18 @@ function updateScore() {
       img.src = "images/scissors-emoji.png";
     else if (computerMove === 'paper')
       img.src = "images/paper-emoji.png";
+
+      var img_Player = document.getElementById('image_Player');
+      if (playerMove === 'rock')
+      img_Player.src = "images/rock-emoji.png";
+      else if (playerMove === 'scissors')
+      img_Player.src = "images/scissors-emoji.png";
+      else if (playerMove === 'paper')
+      img_Player.src = "images/paper-emoji.png";
+    
+      var img_vs = document.getElementById('vs');
+      img_vs.src = '/images/vs.png'
+
 
 
   }
@@ -62,7 +74,7 @@ function updateScore() {
     localStorage.setItem('score', JSON.stringify(score));
     updateScore();
     document.querySelector('h3').innerHTML = `You picked ${playerMove} . computer picked ${computerMove}. ${result}`;
-    changeImage(computerMove);
+    changeImage(computerMove,playerMove);
 
   }
 
