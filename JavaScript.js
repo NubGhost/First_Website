@@ -21,7 +21,7 @@ function updateScore() {
       img_Player.src = "images/paper-emoji.png";
     
       var img_vs = document.getElementById('vs');
-      img_vs.src = '/images/vs.png'
+      img_vs.src = 'images/vs.png'
 
 
 
