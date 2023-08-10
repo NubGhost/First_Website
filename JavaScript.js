@@ -23,7 +23,7 @@ function updateScore() {
   function playGame(playerMove) {
     const computerMove = pickComputerMove();
 
-    changeImage(computerMove);
+   
 
     let result = '';
     if (playerMove === 'scissors') {
@@ -84,9 +84,4 @@ function updateScore() {
     return computerMove;
   }
 
-  let score = JSON.parse(localStorage.getItem('score')) || {
-    wins: 0,
-    losses: 0,
-    ties: 0,
-  };
-  
+ 

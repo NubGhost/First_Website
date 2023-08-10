@@ -46,8 +46,14 @@
     <h3 class="textColor centerText"></h3>
     <img src="" id='image' class="">
 
-    <script src="myscripts.js">
-      
+    <script src="JavaScript.js">
+        let score = JSON.parse(localStorage.getItem('score')) || {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+  };
+  
+  changeImage(computerMove);
       updateScore();
 
     
