@@ -6,7 +6,7 @@
   <link rel="stylesheet"  href="Style.css" /> 
 </head>
 
-<body class="backGoundColor">
+<body class="backGoundColor" onLoad="updateScore()">
 
   <a href="index.html"
   ><button>Main Page</button></a>
@@ -14,7 +14,7 @@
 
   <h1 class="textColor centerText"> rock paper scissors<br><br></h>
 
-
+  
 
     <button class="roundButton" onclick="
       playGame('rock');
@@ -44,19 +44,10 @@
     <br><br>
     <h2 class="textColor centerText"></h2>
     <h3 class="textColor centerText"></h3>
-    <img src="" id='image' class="">
+    <img src="" id='image' class="image">
 
-    <script src="JavaScript.js">
-        let score = JSON.parse(localStorage.getItem('score')) || {
-    wins: 0,
-    losses: 0,
-    ties: 0,
-  };
-  
-  changeImage(computerMove);
-      updateScore();
-
-    
+    <script type="text/javascript" src="JavaScript.js">
+         
     </script>
 </body>
 

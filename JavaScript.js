@@ -3,9 +3,8 @@ function updateScore() {
     document.querySelector('h2').innerHTML = `Wins ${score.wins} Losses ${score.losses}  Ties ${score.ties}`;
 
   }
-
   function changeImage(computerMove) {
-    var img = document.getElementById('image');
+      var img = document.getElementById('image');
     if (computerMove === 'rock')
       img.src = "images/rock-emoji.png";
     else if (computerMove === 'scissors')
@@ -63,7 +62,7 @@ function updateScore() {
     localStorage.setItem('score', JSON.stringify(score));
     updateScore();
     document.querySelector('h3').innerHTML = `You picked ${playerMove} . computer picked ${computerMove}. ${result}`;
-
+    changeImage(computerMove);
 
   }
 
@@ -84,4 +83,10 @@ function updateScore() {
     return computerMove;
   }
 
+  let score = JSON.parse(localStorage.getItem('score')) || {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+  };
+  
  
