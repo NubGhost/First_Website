@@ -31,3 +31,15 @@
     padding: 5px;
   }
 
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centerDiv {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #000000;
+  padding: 10px;
+}
