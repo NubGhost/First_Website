@@ -1,0 +1,75 @@
+*{
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+body{
+    background-color: greenyellow;
+}
+
+.main{
+    position: relative;
+    background-color: red;
+    height: 500px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    border: 5px solid rgb(114, 111, 255);
+    border-radius: 20px;
+}
+
+#longurl{
+    position:relative;
+    top: 40%;
+    left: 10%;
+    height: 40px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+#shorturl{
+    position:relative;
+    top: 43%;
+    left: 10%;
+    height: 40px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+#shorten{
+    position: relative;
+    top: 40%;
+    left: 10%;
+    height: 28px;
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+
+#copy{
+    position: relative;
+    top: 44%;
+    left: 10%;
+    height: 30px;
+    width: 53px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+.main p{
+    position: relative;
+    font-size: 40px;
+    top: 9%;
+    left: 19%;
+    height: 0px;
+    width: 266px;
+    padding-left: 10px;
+}
