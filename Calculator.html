@@ -7,6 +7,10 @@
 </head>
 <body>
     <a href="index.html"><button>Main Page</button></a>
+    <div class="container">
+        <div class="calculator">
+
+      
     <form>
     <div class="display">
         <input type="text" name="display">
@@ -42,8 +46,8 @@
 
 
     <div>
-        <input type="button" value="0" onclick="display.value +='0'">
-        <input type="button" value="=" onclick=" display.value = eval(display.value)">
+        <input type="button" value="0" class="zero" onclick="display.value +='0'">
+        <input type="button" value="=" class="equal" onclick=" display.value = eval(display.value)">
     </div>
 
 
@@ -52,6 +56,8 @@
 
   
 </form>
+</div>
+</div>
 <script>
     console.log(display.value)
 </script>
