@@ -7,8 +7,8 @@ async function short(){
     let longURL = document.getElementById("longurl").value;
     let shortURL = document.getElementById("shorturl");
 
-    const result = await fetch(`https://tinyurl.com/api-create.php?url=${longURL}`);
-    const data = await result.text();
+    const result = await fetch(`https://urlbae.com/api/stats?url=${longURL}`);
+    const data = await result.json();
 
     shortURL.value = data.result.short_link2;
 }
